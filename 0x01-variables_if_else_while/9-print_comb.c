@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-*main - printing 0~9 separated by commas with putchar
+*main - printing single digits separated by commas with putchar
 *Return: Always 0 (Success)
 */
 
@@ -21,5 +21,5 @@ num++;
 }
 putchar('\n');
 
-return(0);
+return (0);
 }

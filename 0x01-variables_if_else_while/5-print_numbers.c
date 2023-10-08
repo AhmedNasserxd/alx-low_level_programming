@@ -1,19 +1,17 @@
 #include <stdio.h>
 
 /**
-*main - printing 0123456789
+*main - printing single digit numbers
 *Return: Always 0 (Success)
 */
 
 int main(void)
 {
-int num = 0;
+int num;
 
-while (num < 10)
-{
-printf('%i', num);
-num++;
-}
+for (num = 0; num < 10; num++)
+printf("%i", num);
+
 putchar('\n');
 
 return (0);
