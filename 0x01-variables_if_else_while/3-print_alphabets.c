@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-*main - printing lowercase and uppercase alphabet using putchar
+*main - printing lowercase and uppercase alphabet with putchar
 *Return: Always 0 (Success)
 */
 
