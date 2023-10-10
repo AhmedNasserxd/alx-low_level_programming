@@ -16,17 +16,19 @@ product = row * column;
 
 if (column == 0)
 {
-_putchar('0' + product);
+_putchar(product + '0');
 }
-else
+if (product < 10 && column != 0)
 {
 _putchar(',');
 _putchar(' ');
-
-if (product <= 9)
-{
 _putchar(' ');
+_putchar('0' + product);
 }
+else if (product >= 10)
+{
+_putchar(',');
+_putchar(' ');
 _putchar('0' + (product / 10));
 _putchar('0' + (product % 10));
 }

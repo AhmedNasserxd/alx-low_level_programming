@@ -16,7 +16,7 @@ for (loweralpha = 'a'; loweralpha <= 'z'; loweralpha++)
 {
 for (upperalpha = 'A'; upperalpha <= 'Z'; upperalpha++)
 {
-if (c == loweralpha || c = upperalpha)
+if (c == loweralpha || c == upperalpha)
 x = 1;
 }
 }
