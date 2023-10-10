@@ -7,7 +7,7 @@
 
 int main(void)
 {
-long int y, w= 1, x= 2, sum;
+long int y, w = 1, x = 2, sum;
 
 for (y = 1; y <= 50; y++)
 {

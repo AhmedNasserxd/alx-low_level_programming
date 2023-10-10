@@ -7,17 +7,33 @@
 
 int main(void)
 {
-unsigned int i;
-unsigned int n1 = 1, n2 = 2, next;
+unsigned long int x, y, z, y1, y2, z1, z2;
 
-printf("%u, %u", n1, n2);
+y = 1;
+z = 2;
 
-for (i = 2; i < 98; i++)
+printf("%lu", y);
+
+for (x = 1; x < 91; x++)
 {
-next = n1 + n2;
-printf(", %u", next);
-n1 = n2;
-n2 = next;
+printf(", %lu", z);
+z = z + y;
+y = z - y;
+}
+
+y1 = y / 1000000000;
+y2 = y % 1000000000;
+z1 = z / 1000000000;
+z2 = z % 1000000000;
+
+for (x = 92; x < 99; ++x)
+{
+printf(", %lu", z1 + (z2 / 1000000000));
+printf("%lu", z2 % 1000000000);
+z1 = z1 + y1;
+y1 = z1 - y1;
+z2 = z2 + y2;
+y2 = z2 - y2;
 }
 
 printf("\n");
