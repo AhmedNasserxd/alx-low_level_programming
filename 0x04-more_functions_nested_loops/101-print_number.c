@@ -6,26 +6,18 @@
 */
 void print_number(int n)
 {
-int power = 1;
+unsigned int i;
 
 if (n < 0)
 {
+i = -n;
 _putchar('-');
-n *= -1;
 }
+else
+i = n;
 
-int temp = n;
+if (i / 10)
+print_number(i / 10);
 
-while (temp > 9)
-{
-temp /= 10;
-power *= 10;
-}
-
-while (power >= 1)
-{
-_putchar((n / power) + '0');
-n %= power;
-power /= 10;
-}
+_putchar((i % 10) + '0');
 }
