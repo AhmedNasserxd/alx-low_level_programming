@@ -6,23 +6,26 @@
 */
 void print_number(int n)
 {
-int divisor = 1;
+int power = 1;
 
 if (n < 0)
 {
 _putchar('-');
-n = -n;
+n *= -1;
 }
 
-while (n / divisor >= 10)
+int temp = n;
+
+while (temp > 9)
 {
-divisor *= 10;
+temp /= 10;
+power *= 10;
 }
 
-while (divisor > 0)
+while (power >= 1)
 {
-_putchar((n / divisor) + '0');
-n %= divisor;
-divisor /= 10;
+_putchar((n / power) + '0');
+n %= power;
+power /= 10;
 }
 }
