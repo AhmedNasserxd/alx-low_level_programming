@@ -5,23 +5,31 @@
 /**
 *main - generate a valid password for
 *Return: Always 0 (Success)
- */
+*/
 int main(void)
 {
+srand(time(0));
+
 char password[15];
-int i;
-unsigned int seed;
 
-seed = time(NULL);
-srand(seed);
-
-for (i = 0; i < 14; i++)
+for (int i = 0; i < 14; i++)
 {
-password[i] = rand() % 94 + 33;
+if (rand() % 2 == 0) // Randomly choose to add a letter or a number
+{
+if (rand() % 2 == 0) // Randomly choose to add an uppercase letter or a lowercase letter
+password[i] = 'A' + rand() % 26;
+else
+password[i] = 'a' + rand() % 26;
 }
-password[14] = '\0';
+else
+{
+password[i] = '0' + rand() % 10; // Add a random digit
+}
+}
 
-printf("%s", password);
+password[14] = '\0'; // Null-terminate the string
 
-return (0);
+printf("%s\n", password);
+
+return 0;
 }
