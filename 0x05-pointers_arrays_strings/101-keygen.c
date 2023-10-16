@@ -8,28 +8,29 @@
 */
 int main(void)
 {
-srand(time(0));
+srand((unsigned int)time(0));
 
 char password[15];
+int i;
 
-for (int i = 0; i < 14; i++)
+for (i = 0; i < 14; i++)
 {
-if (rand() % 2 == 0) // Randomly choose to add a letter or a number
+if (rand() % 2 == 0)
 {
-if (rand() % 2 == 0) // Randomly choose to add an uppercase letter or a lowercase letter
-password[i] = 'A' + rand() % 26;
+if (rand() % 2 == 0)
+password[i] = 'A' + (rand() % 26);
 else
-password[i] = 'a' + rand() % 26;
+password[i] = 'a' + (rand() % 26);
 }
 else
 {
-password[i] = '0' + rand() % 10; // Add a random digit
+password[i] = '0' + (rand() % 10);
 }
 }
 
-password[14] = '\0'; // Null-terminate the string
+password[14] = '\0';
 
 printf("%s\n", password);
 
-return 0;
+return (0);
 }
