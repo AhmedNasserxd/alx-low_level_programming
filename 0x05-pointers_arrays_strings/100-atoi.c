@@ -7,9 +7,9 @@
 */
 int _atoi(char *s)
 {
-    int num = 0;
-    int sign = 1;
-    int i = 0;
+int num = 0;
+int sign = 1;
+int i = 0;
 
 while ((s[i] < '0' || s[i] > '9') && s[i] != 0)
 {
@@ -32,5 +32,5 @@ i++;
 }
 }
 sign *= -1;
-return (num * sign);
+return (num *sign);
 }
