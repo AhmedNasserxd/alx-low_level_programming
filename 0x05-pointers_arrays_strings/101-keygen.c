@@ -8,29 +8,17 @@
 */
 int main(void)
 {
-srand((unsigned int)time(0));
+int i, x, z;
 
-char password[15];
-int i;
-
-for (i = 0; i < 14; i++)
+srand(time(NULL));
+for (x = 0, z = 2772; z > 122; x++)
 {
-if (rand() % 2 == 0)
-{
-if (rand() % 2 == 0)
-password[i] = 'A' + (rand() % 26);
-else
-password[i] = 'a' + (rand() % 26);
-}
-else
-{
-password[i] = '0' + (rand() % 10);
-}
+i = (rand() % 125) + 1;
+printf("%c", i);
+z -= i;
 }
 
-password[14] = '\0';
-
-printf("%s\n", password);
+printf("%c", z);
 
 return (0);
 }
