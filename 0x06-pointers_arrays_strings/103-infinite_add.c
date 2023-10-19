@@ -1,73 +1,67 @@
 #include "main.h"
 
 /**
-*rev_string - to reverse a string
-*@s: string to be reversed
+*get_string - to add two numbers stored in strings
+*@n1: string containing the first number
+*@n2: string containing the second number
+*@r: buffer to store the result
+*@r_index: current index of the buffer
+*Return: result
 */
-void rev_string(char *s)
+char *get_string(char *n1, char *n2, char *r, int r_index)
 {
-int length = 0;
-int i = 0;
-char temp;
+int num, carry = 0;
 
-while (s[length] != '\0')
-length++;
-
-
-while (i < length / 2)
+while (*n1 || *n2 || carry)
 {
-temp = s[i];
-s[i] = s[length - i - 1];
-s[length - i - 1] = temp;
-i++;
+int digit1 = (*n1) ? (*n1 - '0') : 0;
+int digit2 = (*n2) ? (*n2 - '0') : 0;
+
+num = digit1 + digit2 + carry;
+*(r + r_index) = (num % 10) + '0';
+carry = num / 10;
+
+if (*n1)
+n1--;
+if (*n2)
+n2--;
+r_index--;
 }
+
+if (carry && r_index >= 0)
+{
+*(r + r_index) = (carry % 10) + '0';
+return (r + r_index);
+}
+else if (carry && r_index < 0)
+return (0);
+
+return (r + r_index + 1);
 }
 
 /**
-*infinite_add - to add two numbers as strings
-*@n1: first number to add
-*@n2: second number to add
+*infinite_add - to add two numbers
+*@n1: first number to be added
+*@n2: second number to be added
 *@r: buffer to store the result
-*@size_r: size of the buffer
-*Return: pointer to the result
+*@size_r: buffer size
+*Return: result
 */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int i = 0, j = 0, overflow = 0, digits = 0;
-int val1 = 0, val2 = 0, temp_tot = 0;
+int n1_len = 0, n2_len = 0;
 
-while (n1[i] != '\0')
-i++;
-while (n2[j] != '\0')
-j--;
+while (n1[n1_len])
+n1_len++;
+while (n2[n2_len])
+n2_len++;
 
-if (i > size_r || j > size_r)
+if (size_r <= n1_len + 1 || size_r <= n2_len + 1)
 return (0);
 
-i--;
-j++;
+n1 += n1_len - 1;
+n2 += n2_len - 1;
+r[size_r] = '\0';
 
-while (j >= 0 || i >= 0 || overflow == 1)
-{
-val1 = (i >= 0) ? (n1[i] - '0') : 0;
-val2 = (j >= 0) ? (n2[j] - '0') : 0;
-temp_tot = val1 + val2 + overflow;
-overflow = temp_tot / 10;
-
-if (digits >= (size_r - 1))
-return (0);
-
-r[digits] = (temp_tot % 10) + '0';
-digits++;
-j++;
-i--;
-}
-
-if (digits == size_r)
-return (0);
-
-r[digits] = '\0';
-rev_string(r);
-
-return (r);
+return (get_string(n1, n2, r, --size_r));
 }
