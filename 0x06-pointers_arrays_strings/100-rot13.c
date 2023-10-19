@@ -22,5 +22,5 @@ s[i] = rot13_alphabet[p - input_alphabet];
 }
 }
 
-    return (s);
+return (s);
 }
