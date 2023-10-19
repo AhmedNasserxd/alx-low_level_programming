@@ -9,7 +9,6 @@ void print_number(int n)
 {
 unsigned int positive;
 unsigned int divisor = 1;
-int is_negative = 0;
 
 if (n < 0)
 {

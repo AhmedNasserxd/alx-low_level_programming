@@ -1,5 +1,5 @@
 #include "main.h"
-
+void rev_string(char *str);
 /**
 *infinite_add - to add two numbers
 *@n1: first number to be added
