@@ -29,5 +29,5 @@ s[i + 1] -= 32;
 }
 }
 
-return s;
+return (s);
 }
