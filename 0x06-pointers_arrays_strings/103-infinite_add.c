@@ -8,7 +8,6 @@
 *@size_r: buffer size
 *Return: the result
 */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 int i = 0, j = 0, overflow = 0, sum, digits = 0;
@@ -30,7 +29,6 @@ i++;
 if (n2[j])
 j++;
 }
-
 if (digits == size_r)
 return (0);
 

@@ -4,13 +4,11 @@
 /**
 *print_buffer - to print a buffer 10 bytes at a time
 *@b: buffer to be printed
-*@size: number of bytes to be printed
+*@size: number of bytes to be printed from the buffer
 */
 void print_buffer(char *b, int size)
 {
 int byte, index;
-unsigned char c;
-
 
 for (byte = 0; byte < size; byte += 10)
 {
@@ -29,7 +27,7 @@ for (index = 0; index < 10; index++)
 if ((index + byte) >= size)
 break;
 
-c = *(b + index + byte);
+unsigned char c = *(b + index + byte);
 printf("%c", (c >= 32 && c <= 126) ? c : '.');
 }
 
