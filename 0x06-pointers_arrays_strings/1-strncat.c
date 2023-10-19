@@ -18,7 +18,7 @@ z = 0;
 while (dest[x] != '\0')
 x++;
 
-while (src[z] != '\0' && x < n)
+while (src[z] != '\0' && z < n)
 {
 dest[x] = src[z];
 x++;
