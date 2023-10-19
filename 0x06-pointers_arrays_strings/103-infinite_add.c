@@ -1,5 +1,5 @@
 #include "main.h"
-void rev_string(char *str);
+
 /**
 *infinite_add - to add two numbers
 *@n1: first number to be added
@@ -9,6 +9,7 @@ void rev_string(char *str);
 *Return: the result
 */
 
+void rev_string(char *str);
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 int i = 0, j = 0, overflow = 0, sum, digits = 0;

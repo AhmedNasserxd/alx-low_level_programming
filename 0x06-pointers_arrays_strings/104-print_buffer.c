@@ -10,6 +10,7 @@ void print_buffer(char *b, int size)
 {
 int byte, index;
 unsigned char c;
+c = *(b + index + byte);
 
 for (byte = 0; byte < size; byte += 10)
 {
@@ -28,7 +29,6 @@ for (index = 0; index < 10; index++)
 if ((index + byte) >= size)
 break;
 
-c = *(b + index + byte);
 printf("%c", (c >= 32 && c <= 126) ? c : '.');
 }
 
