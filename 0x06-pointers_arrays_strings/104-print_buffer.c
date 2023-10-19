@@ -17,20 +17,30 @@ printf("%08x: ", byte);
 for (index = 0; index < 10; index++)
 {
 if ((index + byte) >= size)
-printf("   ");
+printf("  ");
 else
-printf("%02x ", *(b + index + byte));
+printf("%02x", *(b + index + byte));
+
+if ((index % 2) != 0 && index != 0)
+printf(" ");
 }
 
 for (index = 0; index < 10; index++)
 {
 if ((index + byte) >= size)
 break;
-
-unsigned char c = *(b + index + byte);
-printf("%c", (c >= 32 && c <= 126) ? c : '.');
+else
+{
+char current_char = *(b + index + byte);
+if (current_char >= 31 && current_char <= 126)
+printf("%c", current_char);
+else
+printf(".");
+}
 }
 
+if (byte >= size)
+continue;
 printf("\n");
 }
 
