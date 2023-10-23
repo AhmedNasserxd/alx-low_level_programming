@@ -2,21 +2,27 @@
 #include <stdio.h>
 
 /**
-*print_diagsums - to print sums of the diagonals in a matrix
-*@a: the matrix
-*@size: the size of the matrix
+*print_diagsums - to print sums of diagonals in a square matrix
+*@a: matrix to calculate sums from
+*@size: size of the matrix
 */
-
 void print_diagsums(int *a, int size)
 {
-int diagonal_sum_1 = 0;
-int diagonal_sum_2 = 0;
-int row;
-for (int row = 0; row < size; row++)
+int sum1 = 0;
+int sum2 = 0;
+int row, i;
+
+for (row = 0; row < size; row++)
 {
-diagonal_sum_1 += a[row * size + row];
-diagonal_sum_2 += a[row * size + (size - 1 - row)];
+i = (row * size) + row;
+sum1 += a[i];
 }
 
-printf("%d, %d\n", diagonal_sum_1, diagonal_sum_2);
+for (row = 1; row <= size; row++)
+{
+i = (row * size) - row;
+sum2 += a[i];
+}
+
+printf("%d, %d\n", sum1, sum2);
 }
