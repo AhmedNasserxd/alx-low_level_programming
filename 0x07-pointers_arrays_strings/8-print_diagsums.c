@@ -11,7 +11,7 @@ void print_diagsums(int *a, int size)
 {
 int diagonal_sum_1 = 0;
 int diagonal_sum_2 = 0;
-
+int row;
 for (int row = 0; row < size; row++)
 {
 diagonal_sum_1 += a[row * size + row];
