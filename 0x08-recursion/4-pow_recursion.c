@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*_pow_recursion - to print the value of x 
+*_pow_recursion - to print the value of x
 *@x: the base
 *@y: the exponent
 *Return: the result
@@ -17,5 +17,5 @@ return (1);
 if (y > 1)
 result *= _pow_recursion(x, y - 1);
 
-return result;
+return (result);
 }
