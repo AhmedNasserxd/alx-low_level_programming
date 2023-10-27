@@ -17,7 +17,7 @@ for (x = 1; x < argc; x++)
 {
 for (z = 0; argv[x][z] != '\0'; z++)
 {
-if (argv[num][digit] < '0' || argv[x][z] > '9')
+if (argv[x][z] < '0' || argv[x][z] > '9')
 {
 printf("Error\n");
 return (1);
