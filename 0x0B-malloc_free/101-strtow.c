@@ -10,8 +10,8 @@
 int countWords(char *str)
 {
 int inWord = 0, wordCount = 0;
-
-for (int i = 0; str[i] != '\0'; i++)
+int i;
+for (i = 0; str[i] != '\0'; i++)
 {
 if (str[i] == ' ')
 inWord = 0;

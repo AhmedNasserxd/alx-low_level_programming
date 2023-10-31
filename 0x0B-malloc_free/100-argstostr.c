@@ -28,7 +28,7 @@ strd = malloc((total_length + 1) * sizeof(char));
 if (strd == NULL)
 return (NULL);
 
-*list = strd;
+list = strd;
 
 for (i = 0; i < ac; i++)
 {
