@@ -36,18 +36,13 @@ char **wordArray, *tmp;
 int len = 0, wordCount = 0, i, k = 0, c = 0, start, end;
 
 while (str[len])
-	len++;
-
+len++;
 wordCount = countWords(str);
-
 if (wordCount == 0)
 return (NULL);
-
 wordArray = (char **)malloc(sizeof(char *) * (wordCount + 1));
-
 if (wordArray == NULL)
-return NULL;
-
+return (NULL);
 for (i = 0; i <= len; i++)
 {
 if (str[i] == ' ' || str[i] == '\0')
@@ -56,13 +51,10 @@ if (c)
 {
 end = i;
 tmp = (char *)malloc(sizeof(char) * (c + 1));
-
 if (tmp == NULL)
 return (NULL);
-
 while (start < end)
 *tmp++ = str[start++];
-
 *tmp = '\0';
 wordArray[k] = tmp - c;
 k++;
@@ -73,8 +65,6 @@ else if
 (c++ == 0)
 start = i;
 }
-
 wordArray[k] = NULL;
-
 return (wordArray);
 }
