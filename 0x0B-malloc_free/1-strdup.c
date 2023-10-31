@@ -17,7 +17,7 @@ return (NULL);
 while (str[j])
 j++;
 
-char *list = malloc(sizeof(char) * (j + 1));
+list = malloc(sizeof(char) * (j + 1));
 
 if (list == NULL)
 return (NULL);

@@ -24,7 +24,7 @@ lis1++;
 while (s2[lis2])
 lis2++;
 
-char *strlis = malloc(sizeof(char) * (lis1 + lis2 + 1));
+strlis = malloc(sizeof(char) * (lis1 + lis2 + 1));
 
 if (strlis == NULL)
 return (NULL);

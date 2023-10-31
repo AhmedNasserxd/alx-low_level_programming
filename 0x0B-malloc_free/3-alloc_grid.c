@@ -15,21 +15,21 @@ int **list;
 if (width < 1 || height < 1)
 return NULL;
 
-int **list = malloc(height * sizeof(*list));
+list = malloc(height * sizeof(*list));
 if (list == NULL)
 return (NULL);
 
-for (int x = 0; x < height; x++)
+for (x = 0; x < height; x++)
 {
 list[x] = malloc(width * sizeof(**list));
 if (list[x] == NULL)
 {
-for (int z = x - 1; z >= 0; z--)
+for (z = x - 1; z >= 0; z--)
 free(list[z]);
 free(list);
 return (NULL);
 }
-for (int z = 0; z < width; z++)
+for (z = 0; z < width; z++)
 list[x][z] = 0;
 }
 
