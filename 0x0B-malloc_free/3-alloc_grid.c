@@ -13,7 +13,7 @@ int x, z;
 int **list;
 
 if (width < 1 || height < 1)
-return NULL;
+return (NULL);
 
 list = malloc(height * sizeof(*list));
 if (list == NULL)
