@@ -11,7 +11,8 @@
 int main(int argc, char *argv[])
 {
 unsigned long mul;
-int i;
+int i = 1;
+char *arg = argv[i];
 
 if (argc != 3)
 {
@@ -21,7 +22,7 @@ return (98);
 
 for (i = 1; i < argc; i++)
 {
-char *arg = argv[i];
+
 while (*arg)
 {
 if (*arg < '0' || *arg > '9')
