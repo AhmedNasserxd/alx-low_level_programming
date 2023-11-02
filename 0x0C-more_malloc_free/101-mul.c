@@ -10,33 +10,31 @@
 
 int main(int argc, char *argv[])
 {
-unsigned long mul;
-int i = 1;
-char *arg = argv[i];
+unsigned long var;
+int x, z;
 
 if (argc != 3)
 {
 printf("Error\n");
-return (98);
+exit(98);
 }
 
-for (i = 1; i < argc; i++)
+for (x = 1; x < argc; x++)
 {
 
-while (*arg)
+for (z = 0; argv[x][z] != '\0'; z++)
 {
-if (*arg < '0' || *arg > '9')
+if (argv[x][z] > 57 || argv[x][z] < 48)
 {
 printf("Error\n");
-return (98);
+exit(98);
 }
-arg++;
 }
 }
 
-mul = strtoul(argv[1], NULL, 10) * strtoul(argv[2], NULL, 10);
+var = atol(argv[1]) * atol(argv[2]);
 
-printf("%lu\n", mul);
+printf("%lu\n", var);
 
 return (0);
 }
