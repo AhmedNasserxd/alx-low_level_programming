@@ -27,7 +27,7 @@ exit(99);
 if ((argv[2][0] == '/' || argv[2][0] == '%') && argv[3][0] == '0')
 {
 printf("Error\n");
-exit(99);
+exit(100);
 }
 
 x = atoi(argv[1]);
