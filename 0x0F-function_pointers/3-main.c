@@ -32,6 +32,7 @@ exit(100);
 
 x = atoi(argv[1]);
 z = atoi(argv[3]);
+k = get_op_func(argv[2]);
 
 printf("%d\n", k(x, z));
 
