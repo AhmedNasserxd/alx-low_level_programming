@@ -22,7 +22,7 @@ printf("Error\n");
 exit(98);
 }
 
-if (k == NULL || (argv[2][1] !== '\0'))
+if (k == NULL || (argv[2][1] != '\0'))
 {
 printf("Error\n");
 exit(99);
