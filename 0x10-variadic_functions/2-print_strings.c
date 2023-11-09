@@ -27,7 +27,7 @@ printf("(nil)");
 if (i < n - 1)
 
 if (separator)
-printf("%s", separator)
+printf("%s", separator);
 }
 
 va_end(arr);
