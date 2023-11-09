@@ -3,14 +3,14 @@
 /**
 *sum_them_all - to return the sum of parameters
 *@n: number of parameters
-*Return: result
+*Return: Always 0
 */
 
 int sum_them_all(const unsigned int n, ...)
 {
+int sum;
 va_list arr;
 unsigned int i;
-int sum = 0;
 
 va_start(arr, n);
 
