@@ -13,7 +13,6 @@ va_list arr;
 unsigned int i;
 
 va_start(arr, n);
-
 if (n == 0)
 return (0);
 
