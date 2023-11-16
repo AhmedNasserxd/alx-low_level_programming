@@ -5,6 +5,13 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+*struct list_s - linked list
+*@str: string to use
+*@len: length of string
+*@next: pointer to next node
+*/
+
 typedef struct list_s
 {
 char *str;
