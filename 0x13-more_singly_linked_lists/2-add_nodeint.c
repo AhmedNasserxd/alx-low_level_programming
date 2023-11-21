@@ -18,7 +18,7 @@ return (NULL);
 
 newn->n = n;
 
-new_node->next = *head;
+newn->next = *head;
 *head = newn;
 
 return (newn);
