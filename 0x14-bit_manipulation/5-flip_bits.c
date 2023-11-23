@@ -16,12 +16,10 @@ diff = 0;
 
 differ = n ^ m;
 
-do
-{
+do {
 diff += (differ & 1);
 differ >>= 1;
-}
-while
+} while
 (differ > 0);
 
 return (diff);
