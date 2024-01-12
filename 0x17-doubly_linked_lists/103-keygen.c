@@ -73,25 +73,20 @@ int main(int argc, char **argv)
 {
 char keygen[7];
 int len, ch, vch;
-long alph[] =
-{
+long alph[] = {
 0x3877445248432d41, 0x42394530534e6c37, 0x4d6e706762695432,
 0x74767a5835737956, 0x2b554c59634a474f, 0x71786636576a6d34,
 0x723161513346655a, 0x6b756f494b646850
 };
-
 if (argc != 2)
 {
 printf("Correct usage: %s username\n", argv[0]);
 return (1);
 }
-
 len = 0;
 while (argv[1][len])
 len++;
-
 keygen[0] = ((char *)alph)[(len ^ 59) & 63];
-
 ch = vch = 0;
 while (vch < len)
 {
@@ -99,7 +94,6 @@ ch += argv[1][vch];
 vch++;
 }
 keygen[1] = ((char *)alph)[(ch ^ 79) & 63];
-
 ch = 1;
 vch = 0;
 while (vch < len)
@@ -108,14 +102,10 @@ ch *= argv[1][vch];
 vch++;
 }
 keygen[2] = ((char *)alph)[(ch ^ 85) & 63];
-
 keygen[3] = ((char *)alph)[f4(argv[1], len)];
-
 keygen[4] = ((char *)alph)[f5(argv[1], len)];
-
 keygen[5] = ((char *)alph)[f6(argv[1])];
 keygen[6] = '\0';
-
 printf("%s\n", keygen);
 return (0);
 }
