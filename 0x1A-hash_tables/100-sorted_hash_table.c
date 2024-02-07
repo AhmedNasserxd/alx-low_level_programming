@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * create_sorted_hash_table - Creates a sorted hash table with given size.
+ * shash_table_create - create sorted hash table given size
  *
  * @size: The size of the hash table
  *
